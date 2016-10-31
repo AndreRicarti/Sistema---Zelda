@@ -1,0 +1,14 @@
+C:\Users\Admin\AppData\Local\Temporary Projects\Zelda\bin\Debug\Zelda.exe.config
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\bin\Debug\Zelda.exe.config
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\bin\Debug\Zelda.exe
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\bin\Debug\Zelda.pdb
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\bin\Debug\Zelda.xml
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.Resources.resources
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.vbproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.exe
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.xml
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.pdb
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.FrmMain.resources
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.FrmBase.resources
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.FrmCliente.resources
+C:\Users\Admin\Desktop\Zelda\Zelda\Zelda\obj\Debug\Zelda.vbprojResolveAssemblyReference.cache
