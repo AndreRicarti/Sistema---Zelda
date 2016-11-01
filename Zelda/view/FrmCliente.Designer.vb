@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmCliente
   Inherits Zelda.FrmBase
 
   'Form overrides dispose to clean up the component list.
-  <System.Diagnostics.DebuggerNonUserCode()> _
+  <System.Diagnostics.DebuggerNonUserCode()>
   Protected Overrides Sub Dispose(ByVal disposing As Boolean)
     If disposing AndAlso components IsNot Nothing Then
       components.Dispose()
@@ -17,7 +17,7 @@ Partial Class FrmCliente
   'NOTE: The following procedure is required by the Windows Form Designer
   'It can be modified using the Windows Form Designer.  
   'Do not modify it using the code editor.
-  <System.Diagnostics.DebuggerStepThrough()> _
+  <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
     Me.gbxCliente = New System.Windows.Forms.GroupBox()
     Me.txtUF = New System.Windows.Forms.TextBox()
@@ -47,7 +47,6 @@ Partial Class FrmCliente
     Me.btnExcluir = New System.Windows.Forms.Button()
     Me.btnAtualizar = New System.Windows.Forms.Button()
     Me.btnSalvar = New System.Windows.Forms.Button()
-    Me.Button1 = New System.Windows.Forms.Button()
     Me.gbxCliente.SuspendLayout()
     Me.gbxPesquisa.SuspendLayout()
     CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,20 +323,10 @@ Partial Class FrmCliente
     Me.btnSalvar.TabIndex = 3
     Me.btnSalvar.UseVisualStyleBackColor = False
     '
-    'Button1
-    '
-    Me.Button1.Location = New System.Drawing.Point(452, 340)
-    Me.Button1.Name = "Button1"
-    Me.Button1.Size = New System.Drawing.Size(75, 23)
-    Me.Button1.TabIndex = 9
-    Me.Button1.Text = "Button1"
-    Me.Button1.UseVisualStyleBackColor = True
-    '
     'FrmCliente
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
     Me.ClientSize = New System.Drawing.Size(1003, 663)
-    Me.Controls.Add(Me.Button1)
     Me.Controls.Add(Me.btnSalvar)
     Me.Controls.Add(Me.btnAtualizar)
     Me.Controls.Add(Me.btnExcluir)
@@ -386,5 +375,4 @@ Partial Class FrmCliente
   Friend WithEvents btnAtualizar As Button
   Friend WithEvents btnSalvar As Button
   Friend WithEvents Button4 As Button
-  Friend WithEvents Button1 As Button
 End Class
