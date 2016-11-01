@@ -77,6 +77,7 @@
     <Compile Include="model\dao\ClsDaoCliente.vb" />
     <Compile Include="model\dao\ClsDaoFornecedor.vb" />
     <Compile Include="model\dao\ClsDaoPeca.vb" />
+    <Compile Include="model\dao\ClsDaoUF.vb" />
     <Compile Include="model\dao\ClsDaoUsuario.vb" />
     <Compile Include="model\dao\Connection.vb" />
     <Compile Include="model\dao\IDatabase.vb" />
@@ -183,6 +184,9 @@
     <None Include="Resources\ic_blue_confirm.png" />
     <None Include="Resources\ic_include.png" />
     <None Include="Resources\ic_trash.png" />
+    <None Include="Resources\ic_home.png" />
+    <Content Include="Resources\ic_error.ico" />
+    <Content Include="Resources\ic_error32.png" />
     <Content Include="sql\Zelda.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

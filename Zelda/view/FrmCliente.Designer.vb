@@ -19,8 +19,10 @@ Partial Class FrmCliente
   'Do not modify it using the code editor.
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
+    Me.components = New System.ComponentModel.Container()
+    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCliente))
     Me.gbxCliente = New System.Windows.Forms.GroupBox()
-    Me.txtUF = New System.Windows.Forms.TextBox()
+    Me.cboUF = New System.Windows.Forms.ComboBox()
     Me.lblUF = New System.Windows.Forms.Label()
     Me.txtCidade = New System.Windows.Forms.TextBox()
     Me.lblCidade = New System.Windows.Forms.Label()
@@ -51,14 +53,20 @@ Partial Class FrmCliente
     Me.btnSalvar = New System.Windows.Forms.Button()
     Me.btnAlterar = New System.Windows.Forms.Button()
     Me.btnCancelar = New System.Windows.Forms.Button()
+    Me.ErrorNome = New System.Windows.Forms.ErrorProvider(Me.components)
+    Me.ErrorEndereco = New System.Windows.Forms.ErrorProvider(Me.components)
+    Me.ErrorNumero = New System.Windows.Forms.ErrorProvider(Me.components)
     Me.gbxCliente.SuspendLayout()
     Me.gbxPesquisa.SuspendLayout()
     CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
+    CType(Me.ErrorNome, System.ComponentModel.ISupportInitialize).BeginInit()
+    CType(Me.ErrorEndereco, System.ComponentModel.ISupportInitialize).BeginInit()
+    CType(Me.ErrorNumero, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
     '
     'gbxCliente
     '
-    Me.gbxCliente.Controls.Add(Me.txtUF)
+    Me.gbxCliente.Controls.Add(Me.cboUF)
     Me.gbxCliente.Controls.Add(Me.lblUF)
     Me.gbxCliente.Controls.Add(Me.txtCidade)
     Me.gbxCliente.Controls.Add(Me.lblCidade)
@@ -72,25 +80,28 @@ Partial Class FrmCliente
     Me.gbxCliente.Controls.Add(Me.lblEndereco)
     Me.gbxCliente.Controls.Add(Me.txtNome)
     Me.gbxCliente.Controls.Add(Me.lblNome)
-    Me.gbxCliente.Location = New System.Drawing.Point(442, 12)
+    Me.gbxCliente.Location = New System.Drawing.Point(442, 59)
     Me.gbxCliente.Name = "gbxCliente"
     Me.gbxCliente.Size = New System.Drawing.Size(549, 296)
     Me.gbxCliente.TabIndex = 2
     Me.gbxCliente.TabStop = False
     Me.gbxCliente.Text = "Cliente"
     '
-    'txtUF
+    'cboUF
     '
-    Me.txtUF.Location = New System.Drawing.Point(450, 152)
-    Me.txtUF.MaxLength = 100
-    Me.txtUF.Name = "txtUF"
-    Me.txtUF.Size = New System.Drawing.Size(93, 26)
-    Me.txtUF.TabIndex = 9
+    Me.cboUF.DropDownHeight = 200
+    Me.cboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cboUF.FormattingEnabled = True
+    Me.cboUF.IntegralHeight = False
+    Me.cboUF.Location = New System.Drawing.Point(435, 150)
+    Me.cboUF.Name = "cboUF"
+    Me.cboUF.Size = New System.Drawing.Size(93, 28)
+    Me.cboUF.TabIndex = 13
     '
     'lblUF
     '
     Me.lblUF.AutoSize = True
-    Me.lblUF.Location = New System.Drawing.Point(450, 129)
+    Me.lblUF.Location = New System.Drawing.Point(431, 129)
     Me.lblUF.Name = "lblUF"
     Me.lblUF.Size = New System.Drawing.Size(31, 20)
     Me.lblUF.TabIndex = 8
@@ -101,7 +112,7 @@ Partial Class FrmCliente
     Me.txtCidade.Location = New System.Drawing.Point(10, 152)
     Me.txtCidade.MaxLength = 100
     Me.txtCidade.Name = "txtCidade"
-    Me.txtCidade.Size = New System.Drawing.Size(434, 26)
+    Me.txtCidade.Size = New System.Drawing.Size(401, 26)
     Me.txtCidade.TabIndex = 7
     '
     'lblCidade
@@ -115,7 +126,7 @@ Partial Class FrmCliente
     '
     'txtNumero
     '
-    Me.txtNumero.Location = New System.Drawing.Point(450, 100)
+    Me.txtNumero.Location = New System.Drawing.Point(435, 100)
     Me.txtNumero.MaxLength = 100
     Me.txtNumero.Name = "txtNumero"
     Me.txtNumero.Size = New System.Drawing.Size(93, 26)
@@ -124,7 +135,7 @@ Partial Class FrmCliente
     'lblNumero
     '
     Me.lblNumero.AutoSize = True
-    Me.lblNumero.Location = New System.Drawing.Point(450, 77)
+    Me.lblNumero.Location = New System.Drawing.Point(431, 77)
     Me.lblNumero.Name = "lblNumero"
     Me.lblNumero.Size = New System.Drawing.Size(65, 20)
     Me.lblNumero.TabIndex = 4
@@ -135,7 +146,7 @@ Partial Class FrmCliente
     Me.txtEmail.Location = New System.Drawing.Point(10, 204)
     Me.txtEmail.MaxLength = 100
     Me.txtEmail.Name = "txtEmail"
-    Me.txtEmail.Size = New System.Drawing.Size(533, 26)
+    Me.txtEmail.Size = New System.Drawing.Size(518, 26)
     Me.txtEmail.TabIndex = 11
     '
     'lblEmail
@@ -169,7 +180,7 @@ Partial Class FrmCliente
     Me.txtEndereco.Location = New System.Drawing.Point(10, 100)
     Me.txtEndereco.MaxLength = 100
     Me.txtEndereco.Name = "txtEndereco"
-    Me.txtEndereco.Size = New System.Drawing.Size(434, 26)
+    Me.txtEndereco.Size = New System.Drawing.Size(401, 26)
     Me.txtEndereco.TabIndex = 3
     '
     'lblEndereco
@@ -186,7 +197,7 @@ Partial Class FrmCliente
     Me.txtNome.Location = New System.Drawing.Point(10, 48)
     Me.txtNome.MaxLength = 100
     Me.txtNome.Name = "txtNome"
-    Me.txtNome.Size = New System.Drawing.Size(533, 26)
+    Me.txtNome.Size = New System.Drawing.Size(518, 26)
     Me.txtNome.TabIndex = 1
     '
     'lblNome
@@ -205,7 +216,7 @@ Partial Class FrmCliente
     Me.gbxPesquisa.Controls.Add(Me.lblPesquisaNome)
     Me.gbxPesquisa.Controls.Add(Me.txtPesquisaCodigo)
     Me.gbxPesquisa.Controls.Add(Me.lblPesquisaCodigo)
-    Me.gbxPesquisa.Location = New System.Drawing.Point(12, 12)
+    Me.gbxPesquisa.Location = New System.Drawing.Point(12, 59)
     Me.gbxPesquisa.Name = "gbxPesquisa"
     Me.gbxPesquisa.Size = New System.Drawing.Size(424, 145)
     Me.gbxPesquisa.TabIndex = 0
@@ -259,15 +270,15 @@ Partial Class FrmCliente
     'dgvCliente
     '
     Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.dgvCliente.Location = New System.Drawing.Point(12, 163)
+    Me.dgvCliente.Location = New System.Drawing.Point(12, 206)
     Me.dgvCliente.Name = "dgvCliente"
-    Me.dgvCliente.Size = New System.Drawing.Size(424, 488)
+    Me.dgvCliente.Size = New System.Drawing.Size(424, 445)
     Me.dgvCliente.TabIndex = 1
     '
     'lblSalvar
     '
     Me.lblSalvar.AutoSize = True
-    Me.lblSalvar.Location = New System.Drawing.Point(915, 626)
+    Me.lblSalvar.Location = New System.Drawing.Point(917, 634)
     Me.lblSalvar.Name = "lblSalvar"
     Me.lblSalvar.Size = New System.Drawing.Size(53, 20)
     Me.lblSalvar.TabIndex = 4
@@ -276,7 +287,7 @@ Partial Class FrmCliente
     'lblIncluir
     '
     Me.lblIncluir.AutoSize = True
-    Me.lblIncluir.Location = New System.Drawing.Point(703, 626)
+    Me.lblIncluir.Location = New System.Drawing.Point(704, 634)
     Me.lblIncluir.Name = "lblIncluir"
     Me.lblIncluir.Size = New System.Drawing.Size(51, 20)
     Me.lblIncluir.TabIndex = 8
@@ -285,7 +296,7 @@ Partial Class FrmCliente
     'lblExcluir
     '
     Me.lblExcluir.AutoSize = True
-    Me.lblExcluir.Location = New System.Drawing.Point(493, 626)
+    Me.lblExcluir.Location = New System.Drawing.Point(492, 634)
     Me.lblExcluir.Name = "lblExcluir"
     Me.lblExcluir.Size = New System.Drawing.Size(55, 20)
     Me.lblExcluir.TabIndex = 12
@@ -294,7 +305,7 @@ Partial Class FrmCliente
     'lblCancelar
     '
     Me.lblCancelar.AutoSize = True
-    Me.lblCancelar.Location = New System.Drawing.Point(800, 626)
+    Me.lblCancelar.Location = New System.Drawing.Point(800, 634)
     Me.lblCancelar.Name = "lblCancelar"
     Me.lblCancelar.Size = New System.Drawing.Size(72, 20)
     Me.lblCancelar.TabIndex = 6
@@ -303,7 +314,7 @@ Partial Class FrmCliente
     'lblAlterar
     '
     Me.lblAlterar.AutoSize = True
-    Me.lblAlterar.Location = New System.Drawing.Point(598, 626)
+    Me.lblAlterar.Location = New System.Drawing.Point(598, 634)
     Me.lblAlterar.Name = "lblAlterar"
     Me.lblAlterar.Size = New System.Drawing.Size(56, 20)
     Me.lblAlterar.TabIndex = 10
@@ -315,7 +326,7 @@ Partial Class FrmCliente
     Me.btnIncluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.btnIncluir.Image = Global.Zelda.My.Resources.Resources.ic_include
-    Me.btnIncluir.Location = New System.Drawing.Point(679, 552)
+    Me.btnIncluir.Location = New System.Drawing.Point(679, 560)
     Me.btnIncluir.Name = "btnIncluir"
     Me.btnIncluir.Size = New System.Drawing.Size(100, 71)
     Me.btnIncluir.TabIndex = 7
@@ -327,7 +338,7 @@ Partial Class FrmCliente
     Me.btnExcluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.btnExcluir.Image = Global.Zelda.My.Resources.Resources.ic_blue_trash
-    Me.btnExcluir.Location = New System.Drawing.Point(467, 552)
+    Me.btnExcluir.Location = New System.Drawing.Point(467, 560)
     Me.btnExcluir.Name = "btnExcluir"
     Me.btnExcluir.Size = New System.Drawing.Size(100, 71)
     Me.btnExcluir.TabIndex = 11
@@ -339,7 +350,7 @@ Partial Class FrmCliente
     Me.btnSalvar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.btnSalvar.Image = Global.Zelda.My.Resources.Resources.ic_blue_confirm
-    Me.btnSalvar.Location = New System.Drawing.Point(891, 552)
+    Me.btnSalvar.Location = New System.Drawing.Point(891, 560)
     Me.btnSalvar.Name = "btnSalvar"
     Me.btnSalvar.Size = New System.Drawing.Size(100, 71)
     Me.btnSalvar.TabIndex = 3
@@ -351,7 +362,7 @@ Partial Class FrmCliente
     Me.btnAlterar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.btnAlterar.Image = Global.Zelda.My.Resources.Resources.ic_blue_update
-    Me.btnAlterar.Location = New System.Drawing.Point(573, 552)
+    Me.btnAlterar.Location = New System.Drawing.Point(573, 560)
     Me.btnAlterar.Name = "btnAlterar"
     Me.btnAlterar.Size = New System.Drawing.Size(100, 71)
     Me.btnAlterar.TabIndex = 9
@@ -363,11 +374,26 @@ Partial Class FrmCliente
     Me.btnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
     Me.btnCancelar.Image = Global.Zelda.My.Resources.Resources.ic_blue_cancel
-    Me.btnCancelar.Location = New System.Drawing.Point(785, 552)
+    Me.btnCancelar.Location = New System.Drawing.Point(785, 560)
     Me.btnCancelar.Name = "btnCancelar"
     Me.btnCancelar.Size = New System.Drawing.Size(100, 71)
     Me.btnCancelar.TabIndex = 5
     Me.btnCancelar.UseVisualStyleBackColor = False
+    '
+    'ErrorNome
+    '
+    Me.ErrorNome.ContainerControl = Me
+    Me.ErrorNome.Icon = CType(resources.GetObject("ErrorNome.Icon"), System.Drawing.Icon)
+    '
+    'ErrorEndereco
+    '
+    Me.ErrorEndereco.ContainerControl = Me
+    Me.ErrorEndereco.Icon = CType(resources.GetObject("ErrorEndereco.Icon"), System.Drawing.Icon)
+    '
+    'ErrorNumero
+    '
+    Me.ErrorNumero.ContainerControl = Me
+    Me.ErrorNumero.Icon = CType(resources.GetObject("ErrorNumero.Icon"), System.Drawing.Icon)
     '
     'FrmCliente
     '
@@ -387,11 +413,27 @@ Partial Class FrmCliente
     Me.Controls.Add(Me.gbxPesquisa)
     Me.Controls.Add(Me.gbxCliente)
     Me.Name = "FrmCliente"
+    Me.Controls.SetChildIndex(Me.gbxCliente, 0)
+    Me.Controls.SetChildIndex(Me.gbxPesquisa, 0)
+    Me.Controls.SetChildIndex(Me.dgvCliente, 0)
+    Me.Controls.SetChildIndex(Me.lblSalvar, 0)
+    Me.Controls.SetChildIndex(Me.lblIncluir, 0)
+    Me.Controls.SetChildIndex(Me.lblExcluir, 0)
+    Me.Controls.SetChildIndex(Me.btnCancelar, 0)
+    Me.Controls.SetChildIndex(Me.btnAlterar, 0)
+    Me.Controls.SetChildIndex(Me.btnSalvar, 0)
+    Me.Controls.SetChildIndex(Me.btnExcluir, 0)
+    Me.Controls.SetChildIndex(Me.lblCancelar, 0)
+    Me.Controls.SetChildIndex(Me.btnIncluir, 0)
+    Me.Controls.SetChildIndex(Me.lblAlterar, 0)
     Me.gbxCliente.ResumeLayout(False)
     Me.gbxCliente.PerformLayout()
     Me.gbxPesquisa.ResumeLayout(False)
     Me.gbxPesquisa.PerformLayout()
     CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).EndInit()
+    CType(Me.ErrorNome, System.ComponentModel.ISupportInitialize).EndInit()
+    CType(Me.ErrorEndereco, System.ComponentModel.ISupportInitialize).EndInit()
+    CType(Me.ErrorNumero, System.ComponentModel.ISupportInitialize).EndInit()
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
@@ -406,7 +448,6 @@ Partial Class FrmCliente
   Friend WithEvents dgvCliente As DataGridView
   Friend WithEvents txtNome As TextBox
   Friend WithEvents lblNome As Label
-  Friend WithEvents txtUF As TextBox
   Friend WithEvents lblUF As Label
   Friend WithEvents txtCidade As TextBox
   Friend WithEvents lblCidade As Label
@@ -429,4 +470,8 @@ Partial Class FrmCliente
   Friend WithEvents lblCancelar As Label
   Friend WithEvents btnIncluir As Button
   Friend WithEvents lblAlterar As Label
+  Friend WithEvents cboUF As ComboBox
+  Friend WithEvents ErrorNome As ErrorProvider
+  Friend WithEvents ErrorEndereco As ErrorProvider
+  Friend WithEvents ErrorNumero As ErrorProvider
 End Class

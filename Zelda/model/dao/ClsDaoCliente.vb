@@ -22,7 +22,7 @@ Public Class ClsDaoCliente
     Dim sb As New StringBuilder
 
     sb.AppendLine("UPDATE " & _tabela)
-    sb.AppendLine(" " & _ativo & " = 0")
+    sb.AppendLine(" SET " & _ativo & " = 0")
     sb.AppendLine("WHERE cli_Codigo = " & codigo)
 
     Dim cmd As New SqlCommand(sb.ToString)
