@@ -92,9 +92,8 @@ Public Class ClsDaoPeca
     Return pecas
   End Function
 
-  Public Function getList(codigo As Integer) As List(Of ClsPeca) Implements IDatabase(Of ClsPeca).getList
+  Public Function getElement(codigo As Integer) As ClsPeca Implements IDatabase(Of ClsPeca).getElement
     Dim connection As Connection = Connection.getInstance()
-    Dim pecas As New List(Of ClsPeca)
 
     Dim sb As New StringBuilder
     sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _valor)
@@ -115,9 +114,13 @@ Public Class ClsDaoPeca
       peca.ativo = dr(_ativo).ToString()
       peca.dataCadastro = dr(_dataCadastro).ToString()
 
-      pecas.Add(peca)
+      Return peca
     End While
 
-    Return pecas
+    Return Nothing
+  End Function
+
+  Public Function getList(qry As String) As List(Of ClsPeca) Implements IDatabase(Of ClsPeca).getList
+    Throw New NotImplementedException()
   End Function
 End Class

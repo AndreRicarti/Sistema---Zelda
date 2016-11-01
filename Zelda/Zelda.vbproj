@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controler\EstadoTela.vb" />
     <Compile Include="controler\Util.vb" />
     <Compile Include="model\dao\ClsDaoCliente.vb" />
     <Compile Include="model\dao\ClsDaoFornecedor.vb" />
@@ -176,6 +177,12 @@
     <None Include="Resources\ic_delete1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ic_blue_trash.png" />
+    <None Include="Resources\ic_blue_update.png" />
+    <None Include="Resources\ic_blue_cancel.png" />
+    <None Include="Resources\ic_blue_confirm.png" />
+    <None Include="Resources\ic_include.png" />
+    <None Include="Resources\ic_trash.png" />
     <Content Include="sql\Zelda.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

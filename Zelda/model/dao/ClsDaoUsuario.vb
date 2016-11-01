@@ -96,9 +96,8 @@ Public Class ClsDaoUsuario
     Return usuarios
   End Function
 
-  Public Function getList(codigo As Integer) As List(Of ClsUsuario) Implements IDatabase(Of ClsUsuario).getList
+  Public Function getElement(codigo As Integer) As ClsUsuario Implements IDatabase(Of ClsUsuario).getElement
     Dim connection As Connection = Connection.getInstance()
-    Dim usuarios As New List(Of ClsUsuario)
 
     Dim sb As New StringBuilder
     sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _login & ", " & _senha)
@@ -120,9 +119,13 @@ Public Class ClsDaoUsuario
       usuario.ativo = dr(_ativo).ToString()
       usuario.dataCadastro = dr(_dataCadastro).ToString()
 
-      usuarios.Add(usuario)
+      Return usuario
     End While
 
-    Return usuarios
+    Return Nothing
+  End Function
+
+  Public Function getList(qry As String) As List(Of ClsUsuario) Implements IDatabase(Of ClsUsuario).getList
+    Throw New NotImplementedException()
   End Function
 End Class

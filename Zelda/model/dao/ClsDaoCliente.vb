@@ -79,16 +79,11 @@ Public Class ClsDaoCliente
     connection.ExecuteNonQuery(cmd)
   End Sub
 
-  Public Function getAllList() As List(Of ClsCliente) Implements IDatabase(Of ClsCliente).getAllList
+  Public Function getList(qry As String) As List(Of ClsCliente) Implements IDatabase(Of ClsCliente).getList
     Dim connection As Connection = Connection.getInstance()
     Dim clientes As New List(Of ClsCliente)
 
-    Dim sb As New StringBuilder
-    sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _endereco & ", " & _numero & ", " & _cidade & ", " & _uf)
-    sb.AppendLine(", " & _telefone & ", " & _email & ", " & _ativo & ", " & _dataCadastro)
-    sb.AppendLine(" FROM " & _tabela & " WHERE " & _ativo & " = 1")
-
-    Dim cmd As New SqlCommand(sb.ToString)
+    Dim cmd As New SqlCommand(qry)
     cmd.CommandType = CommandType.Text
 
     Dim dr As SqlDataReader = connection.executeReader(cmd)
@@ -113,9 +108,36 @@ Public Class ClsDaoCliente
     Return clientes
   End Function
 
-  Public Function getList(codigo As Integer) As List(Of ClsCliente) Implements IDatabase(Of ClsCliente).getList
+  Public Function getAllList() As List(Of ClsCliente) Implements IDatabase(Of ClsCliente).getAllList
+
+    Dim sb As New StringBuilder
+    sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _endereco & ", " & _numero & ", " & _cidade & ", " & _uf)
+    sb.AppendLine(", " & _telefone & ", " & _email & ", " & _ativo & ", " & _dataCadastro)
+    sb.AppendLine(" FROM " & _tabela & " WHERE " & _ativo & " = 1")
+
+    Return getList(sb.ToString)
+  End Function
+
+  Public Function getListByCode(codigo As Integer) As List(Of ClsCliente)
+    Dim sb As New StringBuilder
+    sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _endereco & ", " & _numero & ", " & _cidade & ", " & _uf)
+    sb.AppendLine(", " & _telefone & ", " & _email & ", " & _ativo & ", " & _dataCadastro)
+    sb.AppendLine(" FROM " & _tabela & " WHERE " & _ativo & " = 1 AND " & _codigo & " = " & codigo)
+
+    Return getList(sb.ToString)
+  End Function
+
+  Public Function getListByName(nome As String) As List(Of ClsCliente)
+    Dim sb As New StringBuilder
+    sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _endereco & ", " & _numero & ", " & _cidade & ", " & _uf)
+    sb.AppendLine(", " & _telefone & ", " & _email & ", " & _ativo & ", " & _dataCadastro)
+    sb.AppendLine(" FROM " & _tabela & " WHERE " & _ativo & " = 1 AND " & _nome & " = '" & nome & "'")
+
+    Return getList(sb.ToString)
+  End Function
+
+  Public Function getElement(codigo As Integer) As ClsCliente Implements IDatabase(Of ClsCliente).getElement
     Dim connection As Connection = Connection.getInstance()
-    Dim clientes As New List(Of ClsCliente)
 
     Dim sb As New StringBuilder
     sb.AppendLine("SELECT " & _codigo & ", " & _nome & ", " & _endereco & ", " & _numero & ", " & _cidade & ", " & _uf)
@@ -141,9 +163,10 @@ Public Class ClsDaoCliente
       cliente.ativo = dr(_ativo).ToString()
       cliente.dataCadastro = dr(_dataCadastro).ToString()
 
-      clientes.Add(cliente)
+      Return cliente
     End While
 
-    Return clientes
+    Return Nothing
   End Function
+
 End Class

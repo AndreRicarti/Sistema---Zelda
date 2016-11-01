@@ -35,18 +35,22 @@ Partial Class FrmCliente
     Me.txtNome = New System.Windows.Forms.TextBox()
     Me.lblNome = New System.Windows.Forms.Label()
     Me.gbxPesquisa = New System.Windows.Forms.GroupBox()
-    Me.Button4 = New System.Windows.Forms.Button()
+    Me.btnPesquisar = New System.Windows.Forms.Button()
     Me.txtPesquisaNome = New System.Windows.Forms.TextBox()
     Me.lblPesquisaNome = New System.Windows.Forms.Label()
     Me.txtPesquisaCodigo = New System.Windows.Forms.TextBox()
     Me.lblPesquisaCodigo = New System.Windows.Forms.Label()
     Me.dgvCliente = New System.Windows.Forms.DataGridView()
     Me.lblSalvar = New System.Windows.Forms.Label()
-    Me.lblAtualizar = New System.Windows.Forms.Label()
+    Me.lblIncluir = New System.Windows.Forms.Label()
     Me.lblExcluir = New System.Windows.Forms.Label()
+    Me.lblCancelar = New System.Windows.Forms.Label()
+    Me.lblAlterar = New System.Windows.Forms.Label()
+    Me.btnIncluir = New System.Windows.Forms.Button()
     Me.btnExcluir = New System.Windows.Forms.Button()
-    Me.btnAtualizar = New System.Windows.Forms.Button()
     Me.btnSalvar = New System.Windows.Forms.Button()
+    Me.btnAlterar = New System.Windows.Forms.Button()
+    Me.btnCancelar = New System.Windows.Forms.Button()
     Me.gbxCliente.SuspendLayout()
     Me.gbxPesquisa.SuspendLayout()
     CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,7 +200,7 @@ Partial Class FrmCliente
     '
     'gbxPesquisa
     '
-    Me.gbxPesquisa.Controls.Add(Me.Button4)
+    Me.gbxPesquisa.Controls.Add(Me.btnPesquisar)
     Me.gbxPesquisa.Controls.Add(Me.txtPesquisaNome)
     Me.gbxPesquisa.Controls.Add(Me.lblPesquisaNome)
     Me.gbxPesquisa.Controls.Add(Me.txtPesquisaCodigo)
@@ -208,17 +212,17 @@ Partial Class FrmCliente
     Me.gbxPesquisa.TabStop = False
     Me.gbxPesquisa.Text = "Pesquisa"
     '
-    'Button4
+    'btnPesquisar
     '
-    Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-    Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
-    Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.Button4.Image = Global.Zelda.My.Resources.Resources.ic_pesquisar1
-    Me.Button4.Location = New System.Drawing.Point(373, 92)
-    Me.Button4.Name = "Button4"
-    Me.Button4.Size = New System.Drawing.Size(45, 45)
-    Me.Button4.TabIndex = 4
-    Me.Button4.UseVisualStyleBackColor = False
+    Me.btnPesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+    Me.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+    Me.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.btnPesquisar.Image = Global.Zelda.My.Resources.Resources.ic_pesquisar1
+    Me.btnPesquisar.Location = New System.Drawing.Point(373, 92)
+    Me.btnPesquisar.Name = "btnPesquisar"
+    Me.btnPesquisar.Size = New System.Drawing.Size(45, 45)
+    Me.btnPesquisar.TabIndex = 4
+    Me.btnPesquisar.UseVisualStyleBackColor = False
     '
     'txtPesquisaNome
     '
@@ -269,69 +273,115 @@ Partial Class FrmCliente
     Me.lblSalvar.TabIndex = 4
     Me.lblSalvar.Text = "Salvar"
     '
-    'lblAtualizar
+    'lblIncluir
     '
-    Me.lblAtualizar.AutoSize = True
-    Me.lblAtualizar.Location = New System.Drawing.Point(799, 626)
-    Me.lblAtualizar.Name = "lblAtualizar"
-    Me.lblAtualizar.Size = New System.Drawing.Size(71, 20)
-    Me.lblAtualizar.TabIndex = 6
-    Me.lblAtualizar.Text = "Atualizar"
+    Me.lblIncluir.AutoSize = True
+    Me.lblIncluir.Location = New System.Drawing.Point(703, 626)
+    Me.lblIncluir.Name = "lblIncluir"
+    Me.lblIncluir.Size = New System.Drawing.Size(51, 20)
+    Me.lblIncluir.TabIndex = 8
+    Me.lblIncluir.Text = "Incluir"
     '
     'lblExcluir
     '
     Me.lblExcluir.AutoSize = True
-    Me.lblExcluir.Location = New System.Drawing.Point(703, 626)
+    Me.lblExcluir.Location = New System.Drawing.Point(493, 626)
     Me.lblExcluir.Name = "lblExcluir"
     Me.lblExcluir.Size = New System.Drawing.Size(55, 20)
-    Me.lblExcluir.TabIndex = 8
+    Me.lblExcluir.TabIndex = 12
     Me.lblExcluir.Text = "Excluir"
+    '
+    'lblCancelar
+    '
+    Me.lblCancelar.AutoSize = True
+    Me.lblCancelar.Location = New System.Drawing.Point(800, 626)
+    Me.lblCancelar.Name = "lblCancelar"
+    Me.lblCancelar.Size = New System.Drawing.Size(72, 20)
+    Me.lblCancelar.TabIndex = 6
+    Me.lblCancelar.Text = "Cancelar"
+    '
+    'lblAlterar
+    '
+    Me.lblAlterar.AutoSize = True
+    Me.lblAlterar.Location = New System.Drawing.Point(598, 626)
+    Me.lblAlterar.Name = "lblAlterar"
+    Me.lblAlterar.Size = New System.Drawing.Size(56, 20)
+    Me.lblAlterar.TabIndex = 10
+    Me.lblAlterar.Text = "Alterar"
+    '
+    'btnIncluir
+    '
+    Me.btnIncluir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+    Me.btnIncluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+    Me.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.btnIncluir.Image = Global.Zelda.My.Resources.Resources.ic_include
+    Me.btnIncluir.Location = New System.Drawing.Point(679, 552)
+    Me.btnIncluir.Name = "btnIncluir"
+    Me.btnIncluir.Size = New System.Drawing.Size(100, 71)
+    Me.btnIncluir.TabIndex = 7
+    Me.btnIncluir.UseVisualStyleBackColor = False
     '
     'btnExcluir
     '
     Me.btnExcluir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
     Me.btnExcluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.btnExcluir.Image = Global.Zelda.My.Resources.Resources.ic_delete1
-    Me.btnExcluir.Location = New System.Drawing.Point(679, 552)
+    Me.btnExcluir.Image = Global.Zelda.My.Resources.Resources.ic_blue_trash
+    Me.btnExcluir.Location = New System.Drawing.Point(467, 552)
     Me.btnExcluir.Name = "btnExcluir"
     Me.btnExcluir.Size = New System.Drawing.Size(100, 71)
-    Me.btnExcluir.TabIndex = 7
+    Me.btnExcluir.TabIndex = 11
     Me.btnExcluir.UseVisualStyleBackColor = False
-    '
-    'btnAtualizar
-    '
-    Me.btnAtualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-    Me.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
-    Me.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.btnAtualizar.Image = Global.Zelda.My.Resources.Resources.ic_atualizar
-    Me.btnAtualizar.Location = New System.Drawing.Point(785, 552)
-    Me.btnAtualizar.Name = "btnAtualizar"
-    Me.btnAtualizar.Size = New System.Drawing.Size(100, 71)
-    Me.btnAtualizar.TabIndex = 5
-    Me.btnAtualizar.UseVisualStyleBackColor = False
     '
     'btnSalvar
     '
     Me.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
     Me.btnSalvar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
     Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-    Me.btnSalvar.Image = Global.Zelda.My.Resources.Resources.ic_salvar
+    Me.btnSalvar.Image = Global.Zelda.My.Resources.Resources.ic_blue_confirm
     Me.btnSalvar.Location = New System.Drawing.Point(891, 552)
     Me.btnSalvar.Name = "btnSalvar"
     Me.btnSalvar.Size = New System.Drawing.Size(100, 71)
     Me.btnSalvar.TabIndex = 3
     Me.btnSalvar.UseVisualStyleBackColor = False
     '
+    'btnAlterar
+    '
+    Me.btnAlterar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+    Me.btnAlterar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+    Me.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.btnAlterar.Image = Global.Zelda.My.Resources.Resources.ic_blue_update
+    Me.btnAlterar.Location = New System.Drawing.Point(573, 552)
+    Me.btnAlterar.Name = "btnAlterar"
+    Me.btnAlterar.Size = New System.Drawing.Size(100, 71)
+    Me.btnAlterar.TabIndex = 9
+    Me.btnAlterar.UseVisualStyleBackColor = False
+    '
+    'btnCancelar
+    '
+    Me.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+    Me.btnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+    Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.btnCancelar.Image = Global.Zelda.My.Resources.Resources.ic_blue_cancel
+    Me.btnCancelar.Location = New System.Drawing.Point(785, 552)
+    Me.btnCancelar.Name = "btnCancelar"
+    Me.btnCancelar.Size = New System.Drawing.Size(100, 71)
+    Me.btnCancelar.TabIndex = 5
+    Me.btnCancelar.UseVisualStyleBackColor = False
+    '
     'FrmCliente
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
     Me.ClientSize = New System.Drawing.Size(1003, 663)
-    Me.Controls.Add(Me.btnSalvar)
-    Me.Controls.Add(Me.btnAtualizar)
+    Me.Controls.Add(Me.lblAlterar)
+    Me.Controls.Add(Me.btnIncluir)
+    Me.Controls.Add(Me.lblCancelar)
     Me.Controls.Add(Me.btnExcluir)
+    Me.Controls.Add(Me.btnSalvar)
+    Me.Controls.Add(Me.btnAlterar)
+    Me.Controls.Add(Me.btnCancelar)
     Me.Controls.Add(Me.lblExcluir)
-    Me.Controls.Add(Me.lblAtualizar)
+    Me.Controls.Add(Me.lblIncluir)
     Me.Controls.Add(Me.lblSalvar)
     Me.Controls.Add(Me.dgvCliente)
     Me.Controls.Add(Me.gbxPesquisa)
@@ -369,10 +419,14 @@ Partial Class FrmCliente
   Friend WithEvents txtEndereco As TextBox
   Friend WithEvents lblEndereco As Label
   Friend WithEvents lblSalvar As Label
-  Friend WithEvents lblAtualizar As Label
+  Friend WithEvents lblIncluir As Label
   Friend WithEvents lblExcluir As Label
-  Friend WithEvents btnExcluir As Button
-  Friend WithEvents btnAtualizar As Button
+  Friend WithEvents btnCancelar As Button
+  Friend WithEvents btnAlterar As Button
   Friend WithEvents btnSalvar As Button
-  Friend WithEvents Button4 As Button
+  Friend WithEvents btnPesquisar As Button
+  Friend WithEvents btnExcluir As Button
+  Friend WithEvents lblCancelar As Label
+  Friend WithEvents btnIncluir As Button
+  Friend WithEvents lblAlterar As Label
 End Class

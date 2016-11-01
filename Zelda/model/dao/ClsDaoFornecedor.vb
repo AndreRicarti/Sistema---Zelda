@@ -109,9 +109,8 @@ Public Class ClsDaoFornecedor
     Return fornecedores
   End Function
 
-  Public Function getList(codigo As Integer) As List(Of ClsFornecedor) Implements IDatabase(Of ClsFornecedor).getList
+  Public Function getElement(codigo As Integer) As ClsFornecedor Implements IDatabase(Of ClsFornecedor).getElement
     Dim connection As Connection = Connection.getInstance()
-    Dim fornecedores As New List(Of ClsFornecedor)
 
     Dim sb As New StringBuilder
     sb.AppendLine("SELECT " & _codigo & ", " & _cnpj & ", " & _ie & ", " & _razaoSocial & ", " & _endereco)
@@ -136,9 +135,13 @@ Public Class ClsDaoFornecedor
       fornecedor.ativo = dr(_ativo).ToString()
       fornecedor.dataCadastro = dr(_dataCadastro).ToString()
 
-      fornecedores.Add(fornecedor)
+      Return fornecedor
     End While
 
-    Return fornecedores
+    Return Nothing
+  End Function
+
+  Public Function getList(qry As String) As List(Of ClsFornecedor) Implements IDatabase(Of ClsFornecedor).getList
+    Throw New NotImplementedException()
   End Function
 End Class
