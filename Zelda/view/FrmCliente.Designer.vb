@@ -56,6 +56,8 @@ Partial Class FrmCliente
     Me.ErrorNome = New System.Windows.Forms.ErrorProvider(Me.components)
     Me.ErrorEndereco = New System.Windows.Forms.ErrorProvider(Me.components)
     Me.ErrorNumero = New System.Windows.Forms.ErrorProvider(Me.components)
+    Me.btnOrcamento = New System.Windows.Forms.Button()
+    Me.lblOrcamento = New System.Windows.Forms.Label()
     Me.gbxCliente.SuspendLayout()
     Me.gbxPesquisa.SuspendLayout()
     CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -395,10 +397,33 @@ Partial Class FrmCliente
     Me.ErrorNumero.ContainerControl = Me
     Me.ErrorNumero.Icon = CType(resources.GetObject("ErrorNumero.Icon"), System.Drawing.Icon)
     '
+    'btnOrcamento
+    '
+    Me.btnOrcamento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+    Me.btnOrcamento.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+    Me.btnOrcamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+    Me.btnOrcamento.Image = Global.Zelda.My.Resources.Resources.ic_orcamento1
+    Me.btnOrcamento.Location = New System.Drawing.Point(891, 361)
+    Me.btnOrcamento.Name = "btnOrcamento"
+    Me.btnOrcamento.Size = New System.Drawing.Size(100, 71)
+    Me.btnOrcamento.TabIndex = 13
+    Me.btnOrcamento.UseVisualStyleBackColor = False
+    '
+    'lblOrcamento
+    '
+    Me.lblOrcamento.AutoSize = True
+    Me.lblOrcamento.Location = New System.Drawing.Point(898, 435)
+    Me.lblOrcamento.Name = "lblOrcamento"
+    Me.lblOrcamento.Size = New System.Drawing.Size(88, 20)
+    Me.lblOrcamento.TabIndex = 14
+    Me.lblOrcamento.Text = "Orçamento"
+    '
     'FrmCliente
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
-    Me.ClientSize = New System.Drawing.Size(1003, 663)
+    Me.ClientSize = New System.Drawing.Size(1003, 659)
+    Me.Controls.Add(Me.btnOrcamento)
+    Me.Controls.Add(Me.lblOrcamento)
     Me.Controls.Add(Me.lblAlterar)
     Me.Controls.Add(Me.btnIncluir)
     Me.Controls.Add(Me.lblCancelar)
@@ -426,6 +451,8 @@ Partial Class FrmCliente
     Me.Controls.SetChildIndex(Me.lblCancelar, 0)
     Me.Controls.SetChildIndex(Me.btnIncluir, 0)
     Me.Controls.SetChildIndex(Me.lblAlterar, 0)
+    Me.Controls.SetChildIndex(Me.lblOrcamento, 0)
+    Me.Controls.SetChildIndex(Me.btnOrcamento, 0)
     Me.gbxCliente.ResumeLayout(False)
     Me.gbxCliente.PerformLayout()
     Me.gbxPesquisa.ResumeLayout(False)
@@ -474,4 +501,6 @@ Partial Class FrmCliente
   Friend WithEvents ErrorNome As ErrorProvider
   Friend WithEvents ErrorEndereco As ErrorProvider
   Friend WithEvents ErrorNumero As ErrorProvider
+  Friend WithEvents btnOrcamento As Button
+  Friend WithEvents lblOrcamento As Label
 End Class

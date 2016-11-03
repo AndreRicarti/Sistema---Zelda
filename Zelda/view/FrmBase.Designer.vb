@@ -34,15 +34,15 @@ Partial Class FrmBase
     Me.Panel1.Controls.Add(Me.pbxHome)
     Me.Panel1.Location = New System.Drawing.Point(0, 0)
     Me.Panel1.Name = "Panel1"
-    Me.Panel1.Size = New System.Drawing.Size(1003, 53)
+    Me.Panel1.Size = New System.Drawing.Size(1003, 39)
     Me.Panel1.TabIndex = 0
     '
     'pbxHome
     '
-    Me.pbxHome.Image = Global.Zelda.My.Resources.Resources.ic_home
+    Me.pbxHome.Image = Global.Zelda.My.Resources.Resources.ic_back
     Me.pbxHome.Location = New System.Drawing.Point(1, 1)
     Me.pbxHome.Name = "pbxHome"
-    Me.pbxHome.Size = New System.Drawing.Size(51, 50)
+    Me.pbxHome.Size = New System.Drawing.Size(51, 36)
     Me.pbxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
     Me.pbxHome.TabIndex = 0
     Me.pbxHome.TabStop = False
@@ -52,7 +52,7 @@ Partial Class FrmBase
     Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
-    Me.ClientSize = New System.Drawing.Size(1003, 663)
+    Me.ClientSize = New System.Drawing.Size(1003, 659)
     Me.Controls.Add(Me.Panel1)
     Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

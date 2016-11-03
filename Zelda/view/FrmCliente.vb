@@ -2,6 +2,12 @@
   Private estado As Estado = Estado.None
   Private codigoCliente As Integer
 
+  Private Sub btnOrcamento_Click(sender As Object, e As EventArgs) Handles btnOrcamento.Click
+    'Dim frm As New FrmBase
+    'frm.MdiParent = New FrmMain
+    'frm.Show()
+  End Sub
+
   Private Sub FrmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     atualizarTela()
     toolTip()
@@ -264,6 +270,7 @@
     btnSalvar.Enabled = (estado = Estado.Inserir Or estado = Estado.Alterar)
     btnCancelar.Enabled = (estado = Estado.Inserir Or estado = Estado.Alterar)
     btnAlterar.Enabled = (estado = Estado.Visualizar)
+    btnOrcamento.Enabled = (estado = Estado.Visualizar)
     btnExcluir.Enabled = (estado = Estado.Alterar)
   End Sub
 

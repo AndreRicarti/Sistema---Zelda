@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ic_icone.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -185,8 +188,14 @@
     <None Include="Resources\ic_include.png" />
     <None Include="Resources\ic_trash.png" />
     <None Include="Resources\ic_home.png" />
+    <None Include="Resources\ic_backgroud.jpg" />
+    <None Include="Resources\ic_back2.png" />
     <Content Include="Resources\ic_error.ico" />
     <Content Include="Resources\ic_error32.png" />
+    <None Include="Resources\ic_tela1.jpg" />
+    <Content Include="Resources\ic_icone.ico" />
+    <None Include="Resources\ic_orcamento.png" />
+    <None Include="Resources\ic_orcamento1.png" />
     <Content Include="sql\Zelda.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
