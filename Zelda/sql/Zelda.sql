@@ -1,5 +1,11 @@
+USE MASTER
+GO
+IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = 'Zelda') DROP DATABASE Zelda
+GO
 CREATE DATABASE Zelda
+GO
 USE Zelda
+GO
 
 CREATE TABLE Usuario (
 	usu_Codigo INT IDENTITY PRIMARY KEY,
